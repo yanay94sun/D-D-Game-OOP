@@ -1,8 +1,7 @@
 public abstract class Player extends Unit {
     protected int experience;
     protected int playerLevel;
-//    private Tile tile;
-//    private Coordinate coordinate;
+
 
     public Player(int x, int y){
         this.playerLevel = 1;
@@ -31,10 +30,7 @@ public abstract class Player extends Unit {
             this.levelUp();
     }
 
-    @Override
-    public String getDescription() {
-        return null;
-    }
+
 
     public abstract void castAbility(Enemey[] level_enemies);
 
