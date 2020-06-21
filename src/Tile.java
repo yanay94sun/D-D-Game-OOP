@@ -1,6 +1,6 @@
 public abstract class Tile {
-    private char tile;
-    private Coordinate coordinate;
+    protected char tile;
+    protected Coordinate coordinate;
 
     public char getTile() {
         return this.tile;
