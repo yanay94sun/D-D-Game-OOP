@@ -1,6 +1,6 @@
-public class Player extends Unit {
-    private int experience;
-    private int playerLevel;
+public abstract class Player extends Unit {
+    protected int experience;
+    protected int playerLevel;
 //    private Tile tile;
 //    private Coordinate coordinate;
 
@@ -35,4 +35,11 @@ public class Player extends Unit {
     public String getDescription() {
         return null;
     }
+
+    public abstract void castAbility(Enemey[] level_enemies);
+
+    public abstract void gameTick();
+
+
+    public abstract void
 }
