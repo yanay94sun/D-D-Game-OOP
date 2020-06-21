@@ -1,9 +1,9 @@
 public abstract class Unit extends Tile {
-    private String name;
-    private int healthPool;
-    private int healthAmount;
-    private int attackPoints;
-    private int defensePoints;
+    protected String name;
+    protected int healthPool;
+    protected int healthAmount;
+    protected int attackPoints;
+    protected int defensePoints;
     public abstract String getDescription();
 
 }
