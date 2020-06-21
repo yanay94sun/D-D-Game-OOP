@@ -1,7 +1,7 @@
 public abstract class Enemey extends Unit  {
 
-    private boolean alive = true;
-    private int experienceValue;
+    protected boolean alive = true;
+    protected int experienceValue;
 
     protected Enemey(int x, int y){
         this.coordinate = new Coordinate(x, y);
