@@ -10,6 +10,8 @@ public class CLI {
         boolean gameover = false;
         boolean valid;
 
+        Player player_tile = new Warrior()
+
 
 
 
