@@ -418,6 +418,7 @@ public class CLI {
                     LD[down_tile.getCoordinate().getY()][down_tile.getCoordinate().getX()] = temp_down_tile;
                 } else if ((tile instanceof Player && down_tile instanceof Enemey) || (tile instanceof Enemey && down_tile instanceof Player)) {
                     Combat((Unit) (tile), (Unit) (down_tile));
+
                     if (down_tile instanceof Enemey && ((Unit) down_tile).healthAmount <= 0) {
                         temp_player_position = tile.getCoordinate();
                         temp_player = LD[tile.getCoordinate().getY()][tile.getCoordinate().getX()];
