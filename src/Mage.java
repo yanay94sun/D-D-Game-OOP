@@ -6,7 +6,7 @@ public class Mage extends Player{
     private int hitsCount;
     private int abilityRange;
 
-    public Mage(int x, int y, int manaPool, int manaCost, int spellPower, int hitsCount, int abilityRange, String name, int HP, int AP, int DP){
+    public Mage(int x, int y, String name, int HP, int AP, int DP, int manaPool, int manaCost, int spellPower, int hitsCount, int abilityRange){
         super(x, y);
         this.manaPool = manaPool;
         this.currentMana = manaPool / 4;

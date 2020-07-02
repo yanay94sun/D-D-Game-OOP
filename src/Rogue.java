@@ -2,7 +2,7 @@ public class Rogue extends Player {
     private int cost;
     private int currentEnergy = 100;
 
-    public Rogue(int x, int y, String name, int cost, int HP, int AP, int DP){
+    public Rogue(int x, int y, String name, int HP, int AP, int DP, int cost){
         super(x, y);
         this.cost = cost;
         this.name = name;
