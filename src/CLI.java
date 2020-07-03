@@ -59,7 +59,7 @@ public class CLI {
             }
         }
 
-        System.out.println("You have selected:\n" + player_tile.name);
+        System.out.println("You have selected:\n" + player_tile.name + " !");
         int level_num = 1;
         int y;
         int x;
@@ -108,9 +108,11 @@ public class CLI {
                     case 115:
                         move(level_data, player_tile, "down");
                         valid = true;
+                        break;
                     case 97:
                         move(level_data, player_tile, "left");
                         valid = true;
+                        break;
                     case 100:
                         move(level_data, player_tile, "right");
                         valid = true;
@@ -323,10 +325,10 @@ public class CLI {
         return level_data;
     }
 
-    public static void move(Tile[][] LD, Tile tile, String direrection) {
+    public static void move(Tile[][] LD, Tile tile, String direction) {
         Coordinate temp_player_position;
         Tile temp_player;
-        switch (direrection) {
+        switch (direction) {
             case "up":
                 Tile up_tile = LD[tile.getCoordinate().getY() - 1][tile.getCoordinate().getX()];
                 if (up_tile.getClass() == EmptyTile.class) {
@@ -437,7 +439,7 @@ public class CLI {
     }
 
     public static void Combat(Unit Attacker, Unit Defender) {
-        System.out.println(Attacker.name + "engaged in combat with " + Defender.name + ".");
+        System.out.println(Attacker.name + " engaged in combat with " + Defender.name + ".");
         System.out.println(Attacker.getDescription());
         System.out.println(Defender.getDescription());
         int attack_points = (int) (Math.random() * (Attacker.attackPoints + 1));

@@ -36,8 +36,8 @@ public class Rogue extends Player {
             for (int i = 0; i < counter; i++) {
                 int random = (int) (Math.random() * target.length);
                 int randomDefencePoints = (int) (Math.random() * target[random].defensePoints + 1); // WHY +1 ???
-                System.out.println(target[random].name + "rolled" + randomDefencePoints + "Defense Points.");
-                System.out.println(this.name + " hit" + target[random].name + "for" + this.attackPoints + "health amount");
+                System.out.println(target[random].name + " rolled " + randomDefencePoints + " Defense Points.");
+                System.out.println(this.name + " hit " + target[random].name + "for " + this.attackPoints + " health amount.");
                 target[random].healthAmount = Integer.max(0, target[random].healthAmount - this.attackPoints);
             }
         } else {

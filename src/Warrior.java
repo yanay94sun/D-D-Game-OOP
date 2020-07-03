@@ -39,9 +39,9 @@ public class Warrior extends Player{
             if (cnt > 0){
                 int random = (int) (Math.random() * cnt);
                 int randomDefencePoints = (int) (Math.random() * target[random].defensePoints + 1); // WHY +1 ???
-                System.out.println(target[random].name + "rolled" + this.defensePoints + "Defense Points.");
+                System.out.println(target[random].name + " rolled " + this.defensePoints + " Defense Points.");
                 int damage = Integer.max(0, (this.healthAmount / 10) - randomDefencePoints); // CAN REMOVER THIS LINE AND CONNECT IT TO THE NEXT
-                System.out.println(this.name + " hit" + target[random].name + "for" + damage + "health amount");
+                System.out.println(this.name + " hit " + target[random].name + " for " + damage + " health amount ");
                 target[random].healthAmount = Integer.max(0, target[random].healthAmount - damage);
             }
         }

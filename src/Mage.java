@@ -25,7 +25,7 @@ public class Mage extends Player{
     @Override
     public void castAbility(Enemey[] level_enemies) { // CHECK IF INSTEAD castAbility, DO abilityCast
         if (this.currentMana >= this.manaCost) {
-            System.out.println(this.name+" Blizzard");
+            System.out.println(this.name+" Blizzard ");
             this.currentMana -= this.manaCost;
             int hits = 0;
             int counter = 0;
@@ -47,9 +47,10 @@ public class Mage extends Player{
             while ((hits < this.hitsCount) && (0 < target.length)) {
                 int random = (int) (Math.random() * target.length);
                 int randomDefencePoints = (int) (Math.random() * target[random].defensePoints + 1); // WHY +1 ???
-                System.out.println(target[random].name + "rolled" + randomDefencePoints + "Defense Points.");
-                System.out.println(this.name + " hit" + target[random].name + "for" + this.spellPower + "health amount");
+                System.out.println(target[random].name + " rolled " + randomDefencePoints + " Defense Points.");
+                System.out.println(this.name + " hit " + target[random].name + " for " + this.spellPower + " health amount.");
                 target[random].healthAmount = Integer.max(0, target[random].healthAmount - this.spellPower);
+                hits += 1;
             }
         }
         else{
