@@ -25,7 +25,7 @@ public class Mage extends Player{
     @Override
     public void castAbility(Enemey[] level_enemies) { // CHECK IF INSTEAD castAbility, DO abilityCast
         if (this.currentMana >= this.manaCost) {
-            System.out.println(this.name+" Blizzard ");
+            System.out.println(this.name+" used Blizzard ");
             this.currentMana -= this.manaCost;
             int hits = 0;
             int counter = 0;
