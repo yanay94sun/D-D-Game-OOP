@@ -2,6 +2,12 @@
   <artifact type="jar" name="hw3:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/hw3_jar</output-path>
     <root id="archive" name="hw3.jar">
+<<<<<<< HEAD
+=======
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/../hw3 test/META-INF/MANIFEST.MF" />
+      </element>
+>>>>>>> origin/master
       <element id="module-output" name="hw3" />
     </root>
   </artifact>
