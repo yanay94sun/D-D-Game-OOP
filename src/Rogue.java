@@ -41,7 +41,7 @@ public class Rogue extends Player {
                 target[random].healthAmount = Integer.max(0, target[random].healthAmount - this.attackPoints);
             }
         } else {
-            System.out.println(" tried to cast Fan of Knives, but there is not enough Energy: " +this.currentEnergy+ "." );
+            System.out.println(this.name +" tried to cast Fan of Knives, but there is not enough Energy: " +this.currentEnergy+ "." );
         }
     }
 
