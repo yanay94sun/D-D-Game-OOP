@@ -224,7 +224,7 @@ public class CLI {
                 for (x = 0; x < x_size; x++) {
                     System.out.print(level_data[y][x].getTile());
                 }
-                System.out.println("\n");
+                System.out.print("\n");
             }
             System.out.println("\n" + player_tile.getDescription());
             System.out.println("Game Over.");

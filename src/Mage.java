@@ -60,6 +60,7 @@ public class Mage extends Player{
 
     @Override
     public void gameTick() {
+        this.checkExp();
         this.currentMana = Math.min(this.manaPool, (this.currentMana + 1) * this.playerLevel);
     }
 
