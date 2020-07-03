@@ -222,7 +222,7 @@ public class CLI {
             System.out.println("You lost.");
             for (y = 0; y < y_size; y++) {
                 for (x = 0; x < x_size; x++) {
-                    System.out.println(level_data[y][x].getTile());
+                    System.out.print(level_data[y][x].getTile());
                 }
                 System.out.println("\n");
             }
