@@ -47,7 +47,7 @@ public class Warrior extends Player{
         }
 
         else{
-            System.out.println(" tried to cast Avenger's Shield, but there is a cooldown: " +this.remainingCooldown+ "." );
+            System.out.println(this.name + " tried to cast Avenger's Shield, but there is a cooldown: " +this.remainingCooldown+ "." );
         }
      }
 
