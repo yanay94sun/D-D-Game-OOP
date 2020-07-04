@@ -331,7 +331,7 @@ public class CLI {
         switch (direction) {
             case "up":
                 Tile upTile = LD[tile.getCoordinate().getY() - 1][tile.getCoordinate().getX()];
-                if (upTile.getClass() == EmptyTile.class) {
+                if (upTile.getClass() == EmptyTile.class || (upTile instanceof Enemey && ((Unit) upTile).healthAmount <= 0)) {
                     tempPlayerPosition = tile.getCoordinate();
                     tempPlayer = LD[tile.getCoordinate().getY()][tile.getCoordinate().getX()];
                     Coordinate tempUpTile_position = upTile.getCoordinate();
@@ -342,22 +342,12 @@ public class CLI {
                     LD[upTile.getCoordinate().getY()][upTile.getCoordinate().getX()] = tempUpTile;
                 } else if ((tile instanceof Player && upTile instanceof Enemey) || (tile instanceof Enemey && upTile instanceof Player)) {
                     Combat((Unit) (tile), (Unit) (upTile));
-                    if (upTile instanceof Enemey && ((Unit) upTile).healthAmount <= 0) {
-                        tempPlayerPosition = tile.getCoordinate();
-                        tempPlayer = LD[tile.getCoordinate().getY()][tile.getCoordinate().getX()];
-                        Coordinate tempUpTile_position = upTile.getCoordinate();
-                        Tile tempUpTile = LD[tile.getCoordinate().getY() - 1][tile.getCoordinate().getX()];
-                        tile.setCoordinate(tempUpTile_position);
-                        upTile.setCoordinate(tempPlayerPosition);
-                        LD[tile.getCoordinate().getY()][tile.getCoordinate().getX()] = tempPlayer;
-                        LD[upTile.getCoordinate().getY()][upTile.getCoordinate().getX()] = tempUpTile;
-                    }
                 }
                 break;
 
             case "left":
                 Tile leftTile = LD[tile.getCoordinate().getY()][tile.getCoordinate().getX() - 1];
-                if (leftTile.getClass() == EmptyTile.class) {
+                if (leftTile.getClass() == EmptyTile.class || (leftTile instanceof Enemey && ((Unit) leftTile).healthAmount <= 0)) {
                     tempPlayerPosition = tile.getCoordinate();
                     tempPlayer = LD[tile.getCoordinate().getY()][tile.getCoordinate().getX()];
                     Coordinate tempLeftTilePosition = leftTile.getCoordinate();
@@ -368,22 +358,12 @@ public class CLI {
                     LD[leftTile.getCoordinate().getY()][leftTile.getCoordinate().getX()] = tempLeftTile;
                 } else if ((tile instanceof Player && leftTile instanceof Enemey) || (tile instanceof Enemey && leftTile instanceof Player)) {
                     Combat((Unit) (tile), (Unit) (leftTile));
-                    if (leftTile instanceof Enemey && ((Unit) leftTile).healthAmount <= 0) {
-                        tempPlayerPosition = tile.getCoordinate();
-                        tempPlayer = LD[tile.getCoordinate().getY()][tile.getCoordinate().getX()];
-                        Coordinate tempLeftTilePosition = leftTile.getCoordinate();
-                        Tile tempLeftTile = LD[tile.getCoordinate().getY()][tile.getCoordinate().getX() - 1];
-                        tile.setCoordinate(tempLeftTilePosition);
-                        leftTile.setCoordinate(tempPlayerPosition);
-                        LD[tile.getCoordinate().getY()][tile.getCoordinate().getX()] = tempPlayer;
-                        LD[leftTile.getCoordinate().getY()][leftTile.getCoordinate().getX()] = tempLeftTile;
-                    }
                 }
                 break;
 
             case "right":
                 Tile rightTile = LD[tile.getCoordinate().getY()][tile.getCoordinate().getX() + 1];
-                if (rightTile.getClass() == EmptyTile.class) {
+                if (rightTile.getClass() == EmptyTile.class || (rightTile instanceof Enemey && ((Unit) rightTile).healthAmount <= 0)) {
                     tempPlayerPosition = tile.getCoordinate();
                     tempPlayer = LD[tile.getCoordinate().getY()][tile.getCoordinate().getX()];
                     Coordinate tempRightTile_position = rightTile.getCoordinate();
@@ -394,22 +374,12 @@ public class CLI {
                     LD[rightTile.getCoordinate().getY()][rightTile.getCoordinate().getX()] = tempRightTile;
                 } else if ((tile instanceof Player && rightTile instanceof Enemey) || (tile instanceof Enemey && rightTile instanceof Player)) {
                     Combat((Unit) (tile), (Unit) (rightTile));
-                    if (rightTile instanceof Enemey && ((Unit) rightTile).healthAmount <= 0) {
-                        tempPlayerPosition = tile.getCoordinate();
-                        tempPlayer = LD[tile.getCoordinate().getY()][tile.getCoordinate().getX()];
-                        Coordinate tempRightTile_position = rightTile.getCoordinate();
-                        Tile tempRightTile = LD[tile.getCoordinate().getY()][tile.getCoordinate().getX() + 1];
-                        tile.setCoordinate(tempRightTile_position);
-                        rightTile.setCoordinate(tempPlayerPosition);
-                        LD[tile.getCoordinate().getY()][tile.getCoordinate().getX()] = tempPlayer;
-                        LD[rightTile.getCoordinate().getY()][rightTile.getCoordinate().getX()] = tempRightTile;
-                    }
                 }
                 break;
 
             case "down":
                 Tile downTile = LD[tile.getCoordinate().getY() + 1][tile.getCoordinate().getX()];
-                if (downTile.getClass() == EmptyTile.class) {
+                if (downTile.getClass() == EmptyTile.class || (downTile instanceof Enemey && ((Unit) downTile).healthAmount <= 0)) {
                     tempPlayerPosition = tile.getCoordinate();
                     tempPlayer = LD[tile.getCoordinate().getY()][tile.getCoordinate().getX()];
                     Coordinate tempDownTile_position = downTile.getCoordinate();
@@ -420,17 +390,6 @@ public class CLI {
                     LD[downTile.getCoordinate().getY()][downTile.getCoordinate().getX()] = tempDownTile;
                 } else if ((tile instanceof Player && downTile instanceof Enemey) || (tile instanceof Enemey && downTile instanceof Player)) {
                     Combat((Unit) (tile), (Unit) (downTile));
-
-                    if (downTile instanceof Enemey && ((Unit) downTile).healthAmount <= 0) {
-                        tempPlayerPosition = tile.getCoordinate();
-                        tempPlayer = LD[tile.getCoordinate().getY()][tile.getCoordinate().getX()];
-                        Coordinate tempDownTile_position = downTile.getCoordinate();
-                        Tile tempDownTile = LD[tile.getCoordinate().getY() + 1][tile.getCoordinate().getX()];
-                        tile.setCoordinate(tempDownTile_position);
-                        downTile.setCoordinate(tempPlayerPosition);
-                        LD[tile.getCoordinate().getY()][tile.getCoordinate().getX()] = tempPlayer;
-                        LD[downTile.getCoordinate().getY()][downTile.getCoordinate().getX()] = tempDownTile;
-                    }
                 }
                 break;
 
