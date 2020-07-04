@@ -1,4 +1,3 @@
-import java.util.logging.Logger;
 
 public class Warrior extends Player{
     private int abilityCooldown;
@@ -20,24 +19,23 @@ public class Warrior extends Player{
             System.out.println(this.name+" used Avenger's Shield, healing for " + 10*this.defensePoints+".");
             this.remainingCooldown = this.abilityCooldown;
             this.healthAmount = Integer.min(this.healthAmount + (10 * this.defensePoints), this.healthPool);
-            int cnt = 0; // NEED TO CHANGE IT TO COUNTER
+            int counter = 0;
             for (int i = 0; i < level_enemies.length; i++){
-                // check live enemy around
                 if (Math.sqrt(Math.pow(this.getCoordinate().getX() - level_enemies[i].coordinate.getX(), 2) + Math.pow(this.coordinate.getY() - level_enemies[i].coordinate.getY(), 2)) < 3
-                        && level_enemies[i].healthAmount > 0) //HERE WE NEED TO DO ARRAYLIST INSTEAD OF MAKE THEM ZERO
-                    cnt += 1;
+                        && level_enemies[i].healthAmount > 0)
+                    counter += 1;
             }
-            Enemey[] target = new Enemey[cnt];
-            cnt = 0;
-            for (int i = 0; i < level_enemies.length; i++){ // NEED to check if we can do this once
+            Enemey[] target = new Enemey[counter];
+            counter = 0;
+            for (int i = 0; i < level_enemies.length; i++){
                 if (Math.sqrt(Math.pow(this.getCoordinate().getX() - level_enemies[i].coordinate.getX(), 2) + Math.pow(this.coordinate.getY() - level_enemies[i].coordinate.getY(), 2)) < 3
-                        && level_enemies[i].healthAmount > 0){ //HERE WE NEED TO DO ARRAYLIST INSTEAD OF MAKE THEM ZERO
-                    target[cnt] = level_enemies[i];
-                    cnt += 1;
+                        && level_enemies[i].healthAmount > 0){
+                    target[counter] = level_enemies[i];
+                    counter += 1;
                 }
             }
-            if (cnt > 0){
-                int random = (int) (Math.random() * cnt);
+            if (counter > 0){
+                int random = (int) (Math.random() * counter);
                 int randomDefencePoints = (int) (Math.random() * target[random].defensePoints + 1); // WHY +1 ???
                 System.out.println(target[random].name + " rolled " + this.defensePoints + " Defense Points.");
                 int damage = Integer.max(0, (this.healthAmount / 10) - randomDefencePoints); // CAN REMOVER THIS LINE AND CONNECT IT TO THE NEXT
@@ -60,7 +58,7 @@ public class Warrior extends Player{
 
     @Override
     protected String getDescription() {
-        String res = this.name + " \t\t\t  Health: " + this.healthAmount + "/" + this.healthPool + " \t\t\t Attack: " // NEED TO CHANGE THIS FORMAT
+        String res = this.name + " \t\t\t  Health: " + this.healthAmount + "/" + this.healthPool + " \t\t\t Attack: "
                 + this.attackPoints + " \t\t\t Defense: " + this.defensePoints + " \t\t\t level: " + this.playerLevel +
                 "\n\t\t\t Experience: " + this.experience + "/" + 50 * this.playerLevel + " \t\t\t Cooldown: " + this.remainingCooldown + "/" + this.abilityCooldown;
         return res;

@@ -19,16 +19,15 @@ public class Rogue extends Player {
             this.currentEnergy -= this.cost;
             int counter = 0;
             for (int i = 0; i < level_enemies.length; i++) {
-                // check live enemy around
                 if (Math.sqrt(Math.pow(this.getCoordinate().getX() - level_enemies[i].coordinate.getX(), 2) + Math.pow(this.coordinate.getY() - level_enemies[i].coordinate.getY(), 2)) < 2
-                        && level_enemies[i].healthAmount > 0) //HERE WE NEED TO DO ARRAYLIST INSTEAD OF MAKE THEM ZERO
+                        && level_enemies[i].healthAmount > 0)
                     counter += 1;
             }
             Enemey[] target = new Enemey[counter];
             counter = 0;
-            for (int i = 0; i < level_enemies.length; i++) { // NEED to check if we can do this once
+            for (int i = 0; i < level_enemies.length; i++) {
                 if (Math.sqrt(Math.pow(this.getCoordinate().getX() - level_enemies[i].coordinate.getX(), 2) + Math.pow(this.coordinate.getY() - level_enemies[i].coordinate.getY(), 2)) < 2
-                        && level_enemies[i].healthAmount > 0) { //HERE WE NEED TO DO ARRAYLIST INSTEAD OF MAKE THEM ZERO
+                        && level_enemies[i].healthAmount > 0) {
                     target[counter] = level_enemies[i];
                     counter += 1;
                 }
@@ -53,7 +52,7 @@ public class Rogue extends Player {
 
     @Override
     protected String getDescription() {
-        String res = this.name + " \t\t\t  Health: " + this.healthAmount + "/" + this.healthPool + " \t\t\t Attack: " // NEED TO CHANGE THIS FORMAT
+        String res = this.name + " \t\t\t  Health: " + this.healthAmount + "/" + this.healthPool + " \t\t\t Attack: "
                 + this.attackPoints + " \t\t\t Defense: " + this.defensePoints + " \t\t\t level: " + this.playerLevel +
                 "\n\t\t\t Experience: " + this.experience + "/" + 50 * this.playerLevel +
                 " \t\t\t Energy: " + this.currentEnergy + "/" + "100";

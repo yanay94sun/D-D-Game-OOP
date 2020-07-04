@@ -32,7 +32,7 @@ public class Monster extends Enemey{
                 }
             }
         }else{
-            return (int) (Math.random() * 5); // random number between 0 , 5 for move
+            return (int) (Math.random() * 5);
         }
     }
 
