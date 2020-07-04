@@ -17,17 +17,17 @@ public class CLI {
         while (choose) {
             System.out.println("Select player:");
             System.out.println("1. Jon Snow \t\t\t Health: 300/300 \t\t\t Attack: 30 \t\t\t Defense: 4 \t\t\t " +
-                    "Level: 1 \n\t\t\t Experience: 0/50 \t\t\t Cooldown: 0/3");
+                    "Level: 1 \t\t\t Experience: 0/50 \t\t\t Cooldown: 0/3");
             System.out.println("2. The Hound \t\t\t Health: 400/400 \t\t\t Attack: 20 \t\t\t Defense: 6 \t\t\t " +
-                    "Level: 1 \n\t\t\t Experience: 0/50 \t\t\t Cooldown: 0/5");
+                    "Level: 1 \t\t\t Experience: 0/50 \t\t\t Cooldown: 0/5");
             System.out.println("3. Melisandre \t\t\t Health: 100/100 \t\t\t Attack: 5 \t\t\t Defense: 1 \t\t\t " +
-                    "Level: 1 \n\t\t\t Experience: 0/50 \t\t\t Mana: 75/300 \t\t\t Spell Power: 15");
+                    "Level: 1 \t\t\t Experience: 0/50 \t\t\t Mana: 75/300 \t\t\t Spell Power: 15");
             System.out.println("4. Thoros of Myr \t\t\t Health: 250/250 \t\t\t Attack: 25 \t\t\t Defense: 4 \t\t\t " +
-                    "Level: 1 \n\t\t\t Experience: 0/50 \t\t\t Mana: 37/150 \t\t\t Spell Power: 20");
+                    "Level: 1 \t\t\t Experience: 0/50 \t\t\t Mana: 37/150 \t\t\t Spell Power: 20");
             System.out.println("5. Arya Stark \t\t\t Health: 150/150 \t\t\t Attack: 40 \t\t\t Defense: 2 \t\t\t " +
-                    "Level: 1 \n\t\t\t Experience: 0/50 \t\t\t Energy: 100/100");
+                    "Level: 1 \t\t\t Experience: 0/50 \t\t\t Energy: 100/100");
             System.out.println("6. Bronn \t\t\t Health: 250/250 \t\t\t Attack: 35 \t\t\t Defense: 3 \t\t\t " +
-                    "Level: 1 \n\t\t\t Experience: 0/50 \t\t\t Energy: 100/100");
+                    "Level: 1 \t\t\t Experience: 0/50 \t\t\t Energy: 100/100");
 
             c = charSC.next().charAt(0);
 
