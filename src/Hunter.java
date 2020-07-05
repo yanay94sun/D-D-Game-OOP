@@ -25,8 +25,46 @@ public class Hunter extends Player{
 
     @Override
     public void castAbility(Enemey[] level_enemies) {
-        if (this.arrowsCount < 0) {
-            System.out.println(this.name + " used SHOOT ! , shooting arrows for " + this.attackPoints + " damage.");
+        if (this.arrowsCount == 0) {
+            System.out.println(this.name + " tried to cast SHOOT , but there is no arrows left: " +this.arrowsCount+ " arrows." );
+        }
+        else{
+            int counter = 0;
+            for (int i = 0; i < level_enemies.length; i++){
+                if (Math.sqrt(Math.pow(this.getCoordinate().getX() - level_enemies[i].coordinate.getX(), 2) + Math.pow(this.coordinate.getY() - level_enemies[i].coordinate.getY(), 2)) < this.shootingRange
+                        && level_enemies[i].healthAmount > 0)
+                    counter += 1;
+            }
+            Enemey[] target = new Enemey[counter];
+            counter = 0;
+            for (int i = 0; i < level_enemies.length; i++){
+                if (Math.sqrt(Math.pow(this.getCoordinate().getX() - level_enemies[i].coordinate.getX(), 2) + Math.pow(this.coordinate.getY() - level_enemies[i].coordinate.getY(), 2)) < this.shootingRange
+                        && level_enemies[i].healthAmount > 0){
+                    target[counter] = level_enemies[i];
+                    counter += 1;
+                }
+            }
+            if (counter == 0){
+                System.out.println(this.name + " tried to cast SHOOT , but there is no enemies in the shooting range.");
+            }
+            else{
+                this.arrowsCount --;
+                System.out.println(this.name + " used SHOOT ! , shooting arrows for " + this.attackPoints + " damage.");
+                Enemey closestEnemey = target[0];
+                for (int i = 0; i < target.length; i++){
+                    if (Math.sqrt(Math.pow(this.getCoordinate().getX() - target[i].coordinate.getX(), 2) + Math.pow(this.coordinate.getY() - target[i].coordinate.getY(), 2)) > Math.sqrt(Math.pow(this.getCoordinate().getX() - closestEnemey.coordinate.getX(), 2) + Math.pow(this.coordinate.getY() - closestEnemey.coordinate.getY(), 2))){
+                        closestEnemey = target[i];
+                    }
+                }
+                int random = (int) (Math.random() * counter);
+                int randomDefencePoints = (int) (Math.random() * closestEnemey.defensePoints + 1);
+                System.out.println(closestEnemey.name + " rolled " + this.defensePoints + " Defense Points.");
+                int damage = Integer.max(0, (this.healthAmount / 10) - randomDefencePoints);
+                System.out.println(this.name + " hit " + closestEnemey.name + " for " + damage + " health amount ");
+                closestEnemey.healthAmount = Integer.max(0, target[random].healthAmount - damage);
+
+            }
+
         }
 
     }

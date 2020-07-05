@@ -28,6 +28,8 @@ public class CLI {
                     "Level: 1 \t\t\t Experience: 0/50 \t\t\t Energy: 100/100");
             System.out.println("6. Bronn \t\t\t Health: 250/250 \t\t\t Attack: 35 \t\t\t Defense: 3 \t\t\t " +
                     "Level: 1 \t\t\t Experience: 0/50 \t\t\t Energy: 100/100");
+            System.out.println("7. Ygritte \t\t\t Health: 220/220 \t\t\t Attack: 30 \t\t\t Defense: 2 \t\t\t " +
+                    "Level: 1 \t\t\t Experience: 0/50 \t\t\t Arrows: 10/10" );
 
             c = charSC.next().charAt(0);
 
@@ -54,6 +56,10 @@ public class CLI {
                     break;
                 case 54:
                     playerTile = new Rogue(0, 0, "Bronn", 250, 35, 3, 50);
+                    choose = false;
+                    break;
+                case 55:
+                    playerTile = new Hunter(0, 0, "Ygritte", 220, 30, 2, 6);
                     choose = false;
                     break;
             }
@@ -407,7 +413,7 @@ public class CLI {
         System.out.println(Defender.name + " rolled " + defencePoints + " defence points.");
         int totalDamage = Integer.max(0, attackPoints - defencePoints);
         Defender.healthAmount = Integer.max(0, Defender.healthAmount - totalDamage);
-        System.out.println(Attacker.name + " dealt " + totalDamage + " damage to " + Defender.name + ".");
+        System.out.println(Attacker.name + " deal " + totalDamage + " damage to " + Defender.name + ".");
         if (Defender.getTile() == '@' && Defender.healthAmount <= 0) {
             System.out.println(Defender.name + "was killed by " + Attacker.name);
         }
