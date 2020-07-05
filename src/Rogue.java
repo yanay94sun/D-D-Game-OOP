@@ -63,6 +63,6 @@ public class Rogue extends Player {
         super.levelUp();
         this.currentEnergy = 100;
         this.attackPoints += 3 * this.playerLevel;
-        System.out.println(this.name + " reached level " +this.playerLevel+": +"+ this.playerLevel+" Health, +" + this.playerLevel +" Attack, +" + this.playerLevel + " Defense.");
+        System.out.println(this.name + " reached level " +this.playerLevel+": "+ this.playerLevel+" Health, " + this.playerLevel +" Attack, " + this.playerLevel + " Defense.");
     }
 }

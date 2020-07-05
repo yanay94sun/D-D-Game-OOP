@@ -70,6 +70,6 @@ public class Warrior extends Player{
         this.healthAmount = this.healthPool;
         this.attackPoints += 2 * this.playerLevel;
         this.defensePoints += this.playerLevel;
-        System.out.println(this.name + " reached level " +this.playerLevel+": +"+ this.playerLevel+" Health, +" + this.playerLevel +" Attack, +" + this.playerLevel + " Defense.");
+        System.out.println(this.name + " reached level " +this.playerLevel+": "+ this.playerLevel+" Health, " + this.playerLevel +" Attack, " + this.playerLevel + " Defense.");
     }
 }
