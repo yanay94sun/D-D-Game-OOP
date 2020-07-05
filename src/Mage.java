@@ -77,7 +77,7 @@ public class Mage extends Player{
         this.manaPool += 25 * this.playerLevel;
         this.currentMana = Math.min(this.currentMana + (manaPool / 4), this.manaPool);
         this.spellPower += 10 * this.playerLevel;
-        System.out.println(this.name + " reached level " +this.playerLevel+": "+ this.healthAmount+" Health, " + this.attackPoints +" Attack, " + this.defensePoints + " Defense, "+ this.currentMana + "Maximum Mana, "+ this.spellPower + "Spell Power.");
+        System.out.println(this.name + " reached level " +this.playerLevel+": "+ this.healthAmount+" Health, " + this.attackPoints +" Attack, " + this.defensePoints + " Defense, "+ this.currentMana + "Maximum Mana,  "+ this.spellPower + "Spell Power.");
 
     }
 }
